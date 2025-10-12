@@ -1,5 +1,4 @@
 
-
 'use client'
 
 import { useState, Fragment } from 'react'
@@ -26,6 +25,15 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+// 📌 URL CORREGIDA CON LA RUTA Y NOMBRE EXACTO DE TU IMAGEN SUBIDA A GITHUB
+//
+// Esta URL ya incluye el nombre del archivo con los espacios codificados (%20)
+const COMPANY_LOGO_URL = 'https://raw.githubusercontent.com/lourd1998/lamudadora/main/src/assets/La%20mudadora%20logo.png%20(1).png'; // <-- ¡Tu URL real!
+
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
   { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
@@ -44,13 +52,15 @@ export default function Navbar() {
   return (
     <header className="bg-white">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-        {/* Logo */}
+        {/* Logo (Desktop) */}
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img
-              alt=""
-              src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+              alt="Company Logo"
+              // Usa la URL de tu empresa
+              src={COMPANY_LOGO_URL}
+              // El logo debería ser visible ahora
               className="h-8 w-auto"
             />
           </a>
@@ -144,11 +154,13 @@ export default function Navbar() {
         <div className="fixed inset-0 z-50 bg-black/30" />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
+            {/* Logo (Mobile) */}
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
-                alt=""
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+                alt="Company Logo"
+                // Usa la URL de tu empresa
+                src={COMPANY_LOGO_URL}
                 className="h-8 w-auto"
               />
             </a>
@@ -166,22 +178,29 @@ export default function Navbar() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
-                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base leading-7 font-semibold text-gray-900 hover:bg-gray-50">
-                    Product
-                    <ChevronDownIcon aria-hidden="true" className="w-5 h-5 flex-none group-data-[open]:rotate-180" />
-                  </DisclosureButton>
-                  <DisclosurePanel className="mt-2 space-y-2">
-                    {[...products, ...callsToAction].map((item) => (
-                      <DisclosureButton
-                        key={item.name}
-                        as="a"
-                        href={item.href}
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm leading-6 font-semibold text-gray-900 hover:bg-gray-50"
-                      >
-                        {item.name}
+                  {({ open }) => (
+                    <>
+                      <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base leading-7 font-semibold text-gray-900 hover:bg-gray-50">
+                        Product
+                        <ChevronDownIcon
+                          aria-hidden="true"
+                          className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
+                        />
                       </DisclosureButton>
-                    ))}
-                  </DisclosurePanel>
+                      <DisclosurePanel className="mt-2 space-y-2">
+                        {[...products, ...callsToAction].map((item) => (
+                          <DisclosureButton
+                            key={item.name}
+                            as="a"
+                            href={item.href}
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm leading-6 font-semibold text-gray-900 hover:bg-gray-50"
+                          >
+                            {item.name}
+                          </DisclosureButton>
+                        ))}
+                      </DisclosurePanel>
+                    </>
+                  )}
                 </Disclosure>
 
                 <a
