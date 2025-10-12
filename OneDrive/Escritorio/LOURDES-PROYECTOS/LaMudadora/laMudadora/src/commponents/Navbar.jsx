@@ -1,4 +1,3 @@
-
 'use client'
 
 import { useState, Fragment } from 'react'
@@ -29,10 +28,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-// 📌 URL CORREGIDA CON LA RUTA Y NOMBRE EXACTO DE TU IMAGEN SUBIDA A GITHUB
+// 📌 URL SIMPLIFICADA
 //
-// Esta URL ya incluye el nombre del archivo con los espacios codificados (%20)
-const COMPANY_LOGO_URL = 'https://raw.githubusercontent.com/lourd1998/lamudadora/main/src/assets/La%20mudadora%20logo.png%20(1).png'; // <-- ¡Tu URL real!
+// Se ha simplificado la URL a 'logo.png'. POR FAVOR, ASEGÚRATE DE HABER
+// RENOMBRADO EL ARCHIVO EN GITHUB a 'src/assets/logo.png'
+const COMPANY_LOGO_URL = 'https://raw.githubusercontent.com/lourd1998/lamudadora/main/src/assets/logo.png'; // <-- ¡URL simplificada!
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
