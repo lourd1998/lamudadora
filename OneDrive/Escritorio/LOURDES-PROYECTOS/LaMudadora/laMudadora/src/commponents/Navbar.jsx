@@ -1,3 +1,4 @@
+
 'use client'
 
 import { useState, Fragment } from 'react'
@@ -28,11 +29,10 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-// 📌 URL SIMPLIFICADA
+// 📌 RUTA CORREGIDA CON LA CARPETA 'src'
 //
-// Se ha simplificado la URL a 'logo.png'. POR FAVOR, ASEGÚRATE DE HABER
-// RENOMBRADO EL ARCHIVO EN GITHUB a 'src/assets/logo.png'
-const COMPANY_LOGO_URL = 'https://raw.githubusercontent.com/lourd1998/lamudadora/main/src/assets/logo.png'; // <-- ¡URL simplificada!
+// Esta URL asume que renombraste tu archivo a 'logo.png' y que se encuentra en 'src/assets/logo.png'
+const COMPANY_LOGO_URL = 'https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/src/assets/logo.png'; // <-- ¡URL con /src/ incluida!
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
@@ -52,16 +52,15 @@ export default function Navbar() {
   return (
     <header className="bg-white">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-        {/* Logo (Desktop) */}
+        {/* Logo and Company Name (Desktop) */}
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="#" className="-m-1.5 p-1.5 flex items-center space-x-3"> {/* Aumento el espacio entre logo y texto */}
             <span className="sr-only">Your Company</span>
+            {/* Logo */}
             <img
-              alt="Company Logo"
-              // Usa la URL de tu empresa
+              alt="Logo de La Mudadora"
               src={COMPANY_LOGO_URL}
-              // El logo debería ser visible ahora
-              className="h-8 w-auto"
+              className="h-16 w-auto" // CAMBIO AQUÍ: de h-14 a h-16 (más grande)
             />
           </a>
         </div>
@@ -82,7 +81,7 @@ export default function Navbar() {
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm leading-6 font-semibold text-gray-900">
-              Product
+              Servicios 
               <ChevronDownIcon aria-hidden="true" className="w-5 h-5 flex-none text-gray-400" />
             </PopoverButton>
 
@@ -132,19 +131,23 @@ export default function Navbar() {
           </Popover>
 
           <a href="#" className="text-sm leading-6 font-semibold text-gray-900">
-            Features
+            Nosotros
           </a>
           <a href="#" className="text-sm leading-6 font-semibold text-gray-900">
-            Marketplace
+            Clientes
           </a>
           <a href="#" className="text-sm leading-6 font-semibold text-gray-900">
-            Company
+            Contacto Empresas
           </a>
         </PopoverGroup>
 
+        {/* Botón CTA (Call to Action) en Desktop */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm leading-6 font-semibold text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
+          <a 
+            href="#" 
+            className="rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500"
+          >
+            Cotiza tu mudanza {/* CAMBIO: Texto y estilo de botón */}
           </a>
         </div>
       </nav>
@@ -154,15 +157,17 @@ export default function Navbar() {
         <div className="fixed inset-0 z-50 bg-black/30" />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            {/* Logo (Mobile) */}
-            <a href="#" className="-m-1.5 p-1.5">
+            {/* Logo and Company Name (Mobile) */}
+            <a href="#" className="-m-1.5 p-1.5 flex items-center space-x-3">
               <span className="sr-only">Your Company</span>
               <img
-                alt="Company Logo"
-                // Usa la URL de tu empresa
+                alt="Logo de La Mudadora"
                 src={COMPANY_LOGO_URL}
-                className="h-8 w-auto"
+                className="h-16 w-auto" // CAMBIO AQUÍ: de h-14 a h-16 (más grande)
               />
+              <span className="text-3xl font-extrabold uppercase tracking-widest text-gray-900"> {/* CAMBIO AQUÍ: text-3xl y tracking-widest */}
+                La Mudadora
+              </span>
             </a>
             <button
               type="button"
@@ -224,11 +229,12 @@ export default function Navbar() {
               </div>
 
               <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base leading-7 font-semibold text-gray-900 hover:bg-gray-50"
+                {/* Botón CTA (Call to Action) en Mobile */}
+                <a 
+                  href="#" 
+                  className="rounded-md bg-orange-500 px-3.5 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-orange-400 block text-center"
                 >
-                  Log in
+                  Cotiza tu mudanza
                 </a>
               </div>
             </div>
