@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Componente para la Sección de Testimonios
-export default function Testimonials() { // Nombre del componente cambiado a Testimonials
+export default function Testimonials() {
     // Datos de ejemplo para los testimonios
     const testimonials = [
         {
@@ -52,103 +52,110 @@ export default function Testimonials() { // Nombre del componente cambiado a Tes
         setActiveIndex(index);
     };
 
-    // URL de la imagen de fondo, ahora en la carpeta 'assets'
-    const backgroundImageUrl = "public\La mudadora banner.png.png";
+    // Usaremos la URL fiable para los archivos subidos (se mantiene)
+    const backgroundImageUrl = "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/La%20mudadora%20banner.png.png";
 
-    // Nota sobre el estilo del fondo:
-    // La imagen ya tiene un efecto de color naranja/sepia y una baja iluminación,
-    // por lo que ajustaremos la capa oscura para que el texto siga siendo legible.
-    
     return (
-        <section className="relative py-24 sm:py-32 overflow-hidden">
-            
-            {/* Imagen de Fondo de La Mudadora */}
-            <div 
-                className="absolute inset-0 bg-cover bg-center" 
-                style={{ 
-                    backgroundImage: `url(${backgroundImageUrl})`, 
-                    backgroundAttachment: 'fixed', // Efecto parallax
-                    opacity: '0.9', // Mantiene la imagen visible, pero la capa oscura superpuesta garantizará el contraste.
-                }}
-                aria-hidden="true"
-            >
-            </div>
-            
-            {/* Capa de Color para oscurecer la imagen y mejorar legibilidad (Black/Orange Overlay) */}
-            {/* Usamos un degradado para mantener el toque naranja oscuro en la imagen */}
-            <div className="absolute inset-0 bg-gray-950/70" aria-hidden="true"></div>
-
-            <div className="relative mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 z-10">
+        // Sección principal con fondo gris claro para que la tarjeta destaque
+        <section className="bg-gray-50 py-16 sm:py-24 overflow-hidden"> 
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 
-                {/* Encabezado */}
-                <h2 className="text-center text-base/7 font-semibold text-orange-400">La Voz de Nuestros Clientes</h2>
-                <p className="mx-auto mt-2 max-w-2xl text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
-                    Confianza Comprobada en Servicios de Guardado
-                </p>
+                {/* INICIO DE LA TARJETA PRINCIPAL CON LA IMAGEN DE FONDO */}
+                <div 
+                    // CAMBIO 1: Eliminamos min-h-[500px]. La altura la dará el padding del contenido interno.
+                    className="relative w-full rounded-3xl shadow-2xl overflow-hidden bg-orange-700" // Añadimos color de fondo
+                    style={{
+                        backgroundImage: `url(${backgroundImageUrl})`, 
+                        // CAMBIO CLAVE: Cambiamos 'cover' a 'contain' para ver la imagen completa
+                        backgroundSize: 'contain', 
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat', // Evitamos que se repita
+                        backgroundAttachment: 'scroll',
+                        opacity: '1', 
+                    }}
+                >
+                    {/* Capa semi-oscura para asegurar el contraste del texto blanco sobre la imagen */}
+                    {/* Hacemos la capa más oscura y sin blur para integrar el contenido. */}
+                    <div className="absolute inset-0 bg-gray-900/50" aria-hidden="true"></div>
 
-                {/* Carrusel de Testimonios */}
-                <div className="mt-16 relative w-full max-w-4xl mx-auto">
-                    
-                    {/* Contenedor del Testimonio Activo */}
-                    {/* Usamos bg-white/10 para que se vea ligeramente transparente sobre el fondo oscuro */}
-                    <div className="bg-white/10 p-8 sm:p-12 rounded-2xl shadow-2xl backdrop-blur-sm border border-orange-400/30">
-                        <div className="relative text-center">
-                            {/* Icono de Cita */}
-                            <Quote className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 text-orange-500 opacity-20" aria-hidden="true" />
+                    {/* Contenido del Carrusel encima de la Imagen */}
+                    <div 
+                        // CAMBIO 2: Aumentamos el padding vertical (py-24) para dar más cuerpo a la tarjeta.
+                        // Usamos h-full para que ocupe todo el espacio disponible dentro del div de la imagen.
+                        className="relative mx-auto max-w-2xl h-full py-24 flex flex-col justify-center items-center px-6 lg:px-8 z-10"
+                    >
+                        
+                        {/* Encabezado */}
+                        <h2 className="text-center text-base/7 font-semibold text-white/90">La Voz de Nuestros Clientes</h2>
+                        <p className="mx-auto mt-2 max-w-2xl text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl drop-shadow-lg">
+                            Confianza Comprobada
+                        </p>
+
+                        {/* Carrusel de Testimonios - Ahora solo un contenedor de texto simple */}
+                        <div className="mt-8 relative w-full max-w-3xl mx-auto flex-grow flex items-center justify-center">
                             
-                            {/* Texto del Testimonio */}
-                            <p className="mt-4 text-2xl sm:text-3xl font-light text-white italic transition-opacity duration-700 ease-in-out">
-                                “{testimonials[activeIndex].quote}”
-                            </p>
-                            
-                            {/* Autor */}
-                            <div className="mt-10 flex flex-col items-center">
-                                <img
-                                    className="h-16 w-16 rounded-full object-cover border-4 border-orange-500/50 shadow-md"
-                                    src={testimonials[activeIndex].image}
-                                    alt={`Foto de ${testimonials[activeIndex].name}`}
-                                />
-                                <div className="mt-4">
-                                    <p className="text-lg font-semibold text-white">{testimonials[activeIndex].name}</p>
-                                    <p className="text-sm text-orange-400">{testimonials[activeIndex].role}</p>
+                            {/* Contenedor del Testimonio Activo - Diseño minimalista para INTEGRARSE */}
+                            <div className="relative text-center w-full p-4 sm:p-6">
+                                
+                                {/* Texto del Testimonio */}
+                                <p className="mt-4 text-xl sm:text-3xl font-light text-white italic transition-opacity duration-700 ease-in-out drop-shadow-md">
+                                    “{testimonials[activeIndex].quote}”
+                                </p>
+                                
+                                {/* Autor */}
+                                <div className="mt-8 flex flex-col items-center">
+                                    {/* La imagen de perfil es la única parte que mantiene el estilo circular */}
+                                    <img
+                                        className="h-16 w-16 rounded-full object-cover border-4 border-white shadow-xl"
+                                        src={testimonials[activeIndex].image}
+                                        alt={`Foto de ${testimonials[activeIndex].name}`}
+                                    />
+                                    <div className="mt-4">
+                                        <p className="text-lg font-semibold text-white drop-shadow">{testimonials[activeIndex].name}</p>
+                                        <p className="text-sm text-orange-400 drop-shadow">{testimonials[activeIndex].role}</p>
+                                    </div>
                                 </div>
                             </div>
+
+                            {/* Controles de Navegación Manual (Flechas) */}
+                            {/* Los controles se mantienen flotantes a los lados */}
+                            <div className="absolute inset-y-0 w-full flex items-center justify-between pointer-events-none">
+                                <button
+                                    onClick={goToPrev}
+                                    className="p-3 rounded-full bg-white/20 hover:bg-white/30 transition duration-200 shadow-xl pointer-events-auto -ml-4"
+                                    aria-label="Testimonio anterior"
+                                >
+                                    <ChevronLeft className="w-6 h-6 text-white" />
+                                </button>
+                                <button
+                                    onClick={goToNext}
+                                    className="p-3 rounded-full bg-white/20 hover:bg-white/30 transition duration-200 shadow-xl pointer-events-auto -mr-4"
+                                    aria-label="Testimonio siguiente"
+                                >
+                                    <ChevronRight className="w-6 h-6 text-white" />
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Puntos de Navegación (Dots) */}
+                        <div className="mt-4 flex justify-center space-x-3 pb-8">
+                            {testimonials.map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => goToSlide(index)}
+                                    className={`h-2 rounded-full transition-all duration-300 ${
+                                        index === activeIndex ? 'w-8 bg-orange-500' : 'w-2 bg-white/50 hover:bg-orange-300'
+                                    }`}
+                                    aria-label={`Ir al testimonio ${index + 1}`}
+                                />
+                            ))}
                         </div>
                     </div>
-
-                    {/* Controles de Navegación Manual (Flechas) */}
-                    <div className="absolute inset-y-0 w-full flex items-center justify-between pointer-events-none">
-                        <button
-                            onClick={goToPrev}
-                            className="p-3 rounded-full bg-orange-600 hover:bg-orange-700 transition duration-200 shadow-xl pointer-events-auto -ml-4"
-                            aria-label="Testimonio anterior"
-                        >
-                            <ChevronLeft className="w-6 h-6 text-white" />
-                        </button>
-                        <button
-                            onClick={goToNext}
-                            className="p-3 rounded-full bg-orange-600 hover:bg-orange-700 transition duration-200 shadow-xl pointer-events-auto -mr-4"
-                            aria-label="Testimonio siguiente"
-                        >
-                            <ChevronRight className="w-6 h-6 text-white" />
-                        </button>
-                    </div>
                 </div>
+                {/* FIN DE LA TARJETA PRINCIPAL */}
 
-                {/* Puntos de Navegación (Dots) */}
-                <div className="mt-8 flex justify-center space-x-3">
-                    {testimonials.map((_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => goToSlide(index)}
-                            className={`h-2 rounded-full transition-all duration-300 ${
-                                index === activeIndex ? 'w-8 bg-orange-600' : 'w-2 bg-gray-400 hover:bg-orange-300'
-                            }`}
-                            aria-label={`Ir al testimonio ${index + 1}`}
-                        />
-                    ))}
-                </div>
             </div>
         </section>
     );
 }
+
