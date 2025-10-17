@@ -53,7 +53,7 @@ export default function Testimonials() {
     };
 
     // Usaremos la URL fiable para los archivos subidos (se mantiene)
-    const backgroundImageUrl = "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/bannerTestimonio.png";
+    const backgroundImageUrl = "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(1).png";
 
     return (
         // Sección principal con fondo gris claro para que la tarjeta destaque
