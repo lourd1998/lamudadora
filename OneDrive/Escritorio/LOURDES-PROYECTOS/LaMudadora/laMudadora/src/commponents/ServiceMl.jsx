@@ -55,7 +55,7 @@ const localServices = [
 export default function ServiceMl() {
   return (
     // Se añade un fondo con destello naranja suave (bg-white y div con gradiente)
-    <div className="relative overflow-hidden bg-white py-24 sm:py-32">
+    <div id="ServiceML" className="relative overflow-hidden bg-white py-24 sm:py-32">
       {/* Destello naranja de fondo */}
       <div 
         aria-hidden="true" 

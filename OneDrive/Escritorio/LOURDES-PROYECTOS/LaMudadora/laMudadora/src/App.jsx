@@ -7,20 +7,27 @@ import ServiceMl from './commponents/ServiceMl';
 import ServiceGuardado from './commponents/ServiceGuardado';
 import SpecialService from './commponents/SpecialService';
 import Testimonials from './commponents/Testimonials';
+import AboutUs from './commponents/AboutUs';
+import Footer from './commponents/Footer'
+import ServiceCompanies from './commponents/ServiceCompanies';
+
 
 function App() {
   return (
   
-    <div className="min-h-screen bg-gray-50">
+    <div >
       <Navbar/>
       <main>
         <Hero/>
         <ServiceSection/>
         <ServiceMl/>
+        <ServiceCompanies/>
         <SpecialService/>
         <ServiceGuardado/>
         <Testimonials/>
+        <AboutUs/>
       </main>
+      <Footer/>
     </div>
   
   );

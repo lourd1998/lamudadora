@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -52,8 +53,28 @@ export default function Testimonials() {
         setActiveIndex(index);
     };
 
-    // Usaremos la URL fiable para los archivos subidos (se mantiene)
-    const backgroundImageUrl = "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(1).png";
+    // --- DEFINICIÓN DE URLs PARA RESPONSIVE ---
+    // URL para móvil (la imagen vertical original)
+    const mobileBackgroundImageUrl = "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/La%20mudadora%20banner.png.png";
+    // URL para escritorio (la imagen horizontal)
+    const desktopBackgroundImageUrl = "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/bannerhorizontal.png"; // Usando la imagen horizontal que subiste antes
+
+    // Lógica para seleccionar la URL basada en el ancho de la ventana
+    // Usaremos un hook para detectar el tamaño de la pantalla
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 640);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    // Selecciona la URL a usar
+    const currentBackgroundImageUrl = isMobile ? mobileBackgroundImageUrl : desktopBackgroundImageUrl;
+
 
     return (
         // Sección principal con fondo gris claro para que la tarjeta destaque
@@ -62,31 +83,29 @@ export default function Testimonials() {
                 
                 {/* INICIO DE LA TARJETA PRINCIPAL CON LA IMAGEN DE FONDO */}
                 <div 
-                    // CAMBIO 1: Eliminamos min-h-[500px]. La altura la dará el padding del contenido interno.
-                    className="relative w-full rounded-3xl shadow-2xl overflow-hidden bg-orange-700" // Añadimos color de fondo
+                    // Se mantiene la altura mínima
+                    className={`relative w-full rounded-3xl shadow-2xl overflow-hidden min-h-[500px] sm:min-h-[500px]`}
+                    // [AJUSTE CLAVE] Usamos el atributo style para inyectar la URL de manera fiable.
                     style={{
-                        backgroundImage: `url(${backgroundImageUrl})`, 
-                        // CAMBIO CLAVE: Cambiamos 'cover' a 'contain' para ver la imagen completa
-                        backgroundSize: 'contain', 
+                        backgroundImage: `url('${currentBackgroundImageUrl}')`,
+                        backgroundSize: 'cover',
                         backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat', // Evitamos que se repita
+                        backgroundRepeat: 'no-repeat',
                         backgroundAttachment: 'scroll',
-                        opacity: '1', 
+                        opacity: '1',
                     }}
                 >
                     {/* Capa semi-oscura para asegurar el contraste del texto blanco sobre la imagen */}
-                    {/* Hacemos la capa más oscura y sin blur para integrar el contenido. */}
                     <div className="absolute inset-0 bg-gray-900/50" aria-hidden="true"></div>
 
                     {/* Contenido del Carrusel encima de la Imagen */}
                     <div 
-                        // CAMBIO 2: Aumentamos el padding vertical (py-24) para dar más cuerpo a la tarjeta.
-                        // Usamos h-full para que ocupe todo el espacio disponible dentro del div de la imagen.
+                        // Mantenemos el padding vertical alto para darle cuerpo a la tarjeta
                         className="relative mx-auto max-w-2xl h-full py-24 flex flex-col justify-center items-center px-6 lg:px-8 z-10"
                     >
                         
                         {/* Encabezado */}
-                        <h2 className="text-center text-base/7 font-semibold text-white/90">La Voz de Nuestros Clientes</h2>
+                        <h2 className="text-center text-base/7 font-semibold text-orange-600">La Voz de Nuestros Clientes</h2>
                         <p className="mx-auto mt-2 max-w-2xl text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl drop-shadow-lg">
                             Confianza Comprobada
                         </p>
@@ -158,4 +177,3 @@ export default function Testimonials() {
         </section>
     );
 }
-

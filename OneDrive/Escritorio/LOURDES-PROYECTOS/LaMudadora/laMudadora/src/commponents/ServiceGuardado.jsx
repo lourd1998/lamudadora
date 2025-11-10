@@ -64,14 +64,14 @@ export default function ServiceGuardado() {
 
 
     return (
-        <div className="bg-gray-50 py-24 sm:py-32">
+        <div id="ServiceGuardado" className="bg-gray-50 py-24 sm:py-32">
             <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
                 {/* Encabezado de la Sección */}
                 <h2 className="text-center text-base/7 font-semibold text-orange-600">Nuestros Servicios de Almacenamiento</h2>
                 <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-gray-950 sm:text-5xl">
                     Bauleras y Guardamuebles
                 </p>
-                 <p className="mt-6 text-lg leading-8 text-gray-600">
+                 <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto text-center"> 
             Necesitabas una solucion a tus espacios, esos articulos que amas pero no entran en tu hogar ahora podes dejarlos bajo nuestro cuidado en nuestras diferentes opciones de guardado.
                 </p>
                 {/* Contenedor principal del Bento Box (Grid de 3 columnas, 2 filas) */}

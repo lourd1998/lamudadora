@@ -34,7 +34,7 @@ export default function SpecialService() {
         const Icon = service.icon;
 
         return (
-            <div className="flex flex-col h-full bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-gray-100">
+            <div id="SpecialService" className="flex flex-col h-full bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-gray-100">
                 
                 {/* Cabecera con Icono y Título */}
                 <div className="p-6 sm:p-8 bg-orange-50 border-b border-orange-200">
