@@ -9,8 +9,8 @@ export default function ServiceGuardado() {
             imageAlt: "Imágenes de bauleras privadas",
             // Ahora usamos dos URLs de imagen por servicio
             imageSrc: [
-                "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/bauleraexterior.jpg.JPG", // Imagen 1 (arriba)
-                "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/bauleraexterior2.jpg.JPG"  // Imagen 2 (abajo)
+                "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/public/bauleraexterior.jpg.JPG", // Imagen 1 (arriba)
+                "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/public/bauleraexterior2.jpg.JPG"  // Imagen 2 (abajo)
             ],
             descriptionTitle: "Bauleras: Tu Espacio Personalizado",
             descriptionText: "Solución de almacenamiento totalmente privada con tamaños que se ajustan a tus necesidades. Cierra con tu propio candado y accede libremente.",
@@ -27,8 +27,8 @@ export default function ServiceGuardado() {
             imageAlt: "Imágenes de guardamuebles sectorizado",
             // Ahora usamos dos URLs de imagen por servicio
             imageSrc: [
-                "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/Gemini_Generated_Image_z5qe66z5qe66z5qe.png", // Imagen 1 (arriba)
-                "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/Gemini_Generated_Image_kzetznkzetznkzet.png"     // Imagen 2 (abajo)
+                "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/public/Gemini_Generated_Image_z5qe66z5qe66z5qe.png", // Imagen 1 (arriba)
+                "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/public/Gemini_Generated_Image_kzetznkzetznkzet.png"     // Imagen 2 (abajo)
             ],
             descriptionTitle: "Guardamuebles: Almacenamiento Compartido",
             descriptionText: "Ideal para guardar mobiliario y objetos voluminosos en sectores delimitados de nuestro depósito común, optimizando costos.",

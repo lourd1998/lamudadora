@@ -3,7 +3,7 @@ import React from 'react';
 function HeroSection() {
     // Placeholder para una imagen de camión de mudanza (usando el esquema de color azul/naranja)
     // Usaremos un placeholder azul claro, similar al del fondo en tu imagen de referencia.
-    const HERO_IMAGE_URL = "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/camion2.png"; // bg-blue-300
+    const HERO_IMAGE_URL = "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/public/camion2.png"; // bg-blue-300
     const phoneNumber = "+543814161901";
 
 

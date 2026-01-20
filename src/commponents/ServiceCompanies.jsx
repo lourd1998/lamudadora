@@ -9,7 +9,7 @@ const ServiceCompanies = () => {
     const emailBody = encodeURIComponent("Hola, me gustaría solicitar un presupuesto para una mudanza de empresa. Adjunto los detalles a continuación:");
 
     // Imagen que contiene todos los logos juntos
-    const LOGOS_IMAGE_URL ="https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/Captura%20de%20pantalla%202025-12-08%20181856.png";
+    const LOGOS_IMAGE_URL ="https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/public/Captura%20de%20pantalla%202025-12-08%20181856.png";
 
     return (
         <div id="ServiceCompanies" className="bg-gray-50 py-16 sm:py-24">

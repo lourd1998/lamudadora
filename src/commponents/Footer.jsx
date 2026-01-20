@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
 
-const COMPANY_LOGO_URL = 'https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/src/assets/logo.png'; 
+const COMPANY_LOGO_URL = 'https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/src/assets/logo.png'; 
 const businessEmail = "rrhh@lamudadora.com"; 
     const emailSubject = encodeURIComponent("Postulacion");
     const emailBody = encodeURIComponent("Hola, me gustaría formar parte de su empresa, adjunto mi cv");

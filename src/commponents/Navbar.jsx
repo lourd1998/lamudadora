@@ -36,7 +36,7 @@ function classNames(...classes) {
 }
 
 // 📌 URL del Logo
-const COMPANY_LOGO_URL = 'https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/src/assets/logo.png'; 
+const COMPANY_LOGO_URL = 'https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/src/assets/logo.png'; 
 
 // 🎯 Definición de los servicios de La Mudadora
 const services = [

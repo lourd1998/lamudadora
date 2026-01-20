@@ -20,7 +20,7 @@ const localServices = [
             { name: 'Carga y descarga con personal especializado' },
             { name: 'Garantía y embalaje del mobiliario' },
         ],
-        imageUrl: 'https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/mudanza.jpg.JPG',
+        imageUrl: 'https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/public/mudanza.jpg.JPG',
         imageSide: 'left',
     },
     {
@@ -34,7 +34,7 @@ const localServices = [
             { name: 'Embalaje de artículos frágiles, ropa, libros y +' },
             { name: 'Garantía en todo lo embalado' },
         ],
-        imageUrl: 'https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/embalaje.jpg.jpg', 
+        imageUrl: 'https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/public/embalaje.jpg.jpg', 
         imageSide: 'left',
     },
     {
@@ -49,7 +49,7 @@ const localServices = [
             { name: 'Acomodo inicial de pertenencias' },
             { name: 'Garantía en todo el servicio' },
         ],
-        imageUrl: 'https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/colgado.jpg.JPG',
+        imageUrl: 'https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/public/colgado.jpg.JPG',
         imageSide: 'left',
     },
 ];

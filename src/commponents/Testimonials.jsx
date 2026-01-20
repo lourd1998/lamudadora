@@ -55,9 +55,9 @@ export default function Testimonials() {
 
     // --- DEFINICIÓN DE URLs PARA RESPONSIVE ---
     // URL para móvil (la imagen vertical original)
-    const mobileBackgroundImageUrl = "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/La%20mudadora%20banner.png.png";
+    const mobileBackgroundImageUrl = "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/public/La%20mudadora%20banner.png.png";
     // URL para escritorio (la imagen horizontal)
-    const desktopBackgroundImageUrl = "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/OneDrive/Escritorio/LOURDES-PROYECTOS/LaMudadora/laMudadora/public/bannerhorizontal.png"; // Usando la imagen horizontal que subiste antes
+    const desktopBackgroundImageUrl = "https://raw.githubusercontent.com/lourd1998/lamudadora/refs/heads/main/public/bannerhorizontal.png"; // Usando la imagen horizontal que subiste antes
 
     // Lógica para seleccionar la URL basada en el ancho de la ventana
     // Usaremos un hook para detectar el tamaño de la pantalla
