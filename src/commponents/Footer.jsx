@@ -37,13 +37,13 @@ const Footer = () => {
                     
                     {/* Columna 1: Información de la Empresa / Logo */}
                     <div>
-                       <img
-                           alt="Company Logo"
-                          // Usa la URL de tu empresa
-                           src={COMPANY_LOGO_URL}
-                          // El logo debería ser visible ahora
-                          className="h-10 w-auto"
-                       />
+                       <Link to="/">
+                            <img
+                            alt="Company Logo"
+                            src={COMPANY_LOGO_URL}
+                            className="h-10 w-auto cursor-pointer"
+                            />
+                        </Link>
                         <p className="text-gray-400 text-sm mb-4">
                             Expertos en mudanzas nacionales e internacionales. Tu tranquilidad, nuestra prioridad.
                         </p>
@@ -56,20 +56,7 @@ const Footer = () => {
                             </a>
                         </div>
                     </div>
-
-                    {/* Columna 2: Servicios (similar a lo que vi en tu navbar) */}
-                    <div>
-                        <h4 className="text-lg font-semibold mb-5 uppercase tracking-wider">
-                            Servicios
-                        </h4>
-                        <div className="flex flex-col space-y-3">
-                            <FooterLink href="#ServiceSection">Mudanzas Nacionales</FooterLink>
-                            <FooterLink href="#ServiceML">Mudanzas Locales</FooterLink>
-                            <FooterLink href="#ServiceCompanies">Mudanzas de Empresas</FooterLink>
-                            <FooterLink href="#ServiceGuardado">Almacenamiento</FooterLink>
-                            <FooterLink href="#SpecialService">Servicios Especiales</FooterLink>
-                        </div>
-                    </div>
+                    
 
                     {/* Columna 3: Enlaces Rápidos / Información */}
                     <div>
@@ -77,8 +64,7 @@ const Footer = () => {
                             Información
                         </h4>
                         <div className="flex flex-col space-y-3">
-                            <FooterLink href="#cotizar">Cotizar</FooterLink>
-                            <FooterLink href="#AboutUs">Nosotros</FooterLink>
+                            <FooterLink href="https://form.bymovers.com/es/f/particulares_sencillo_v2?p=eyJmIjoicGFydGljdWxhcmVzX3NlbmNpbGxvX3YyIiwiZCI6ImxhbXVkYWRvcmEiLCIiOm51bGx9">Cotizar</FooterLink>
                             <FooterLink href="#privacidad">Política de Privacidad</FooterLink>
                             <Link to="/postulaciones">Trabajá con nosotros</Link>
                         </div>

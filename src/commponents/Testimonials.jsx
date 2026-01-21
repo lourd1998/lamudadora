@@ -78,7 +78,7 @@ export default function Testimonials() {
 
     return (
         // Sección principal con fondo gris claro para que la tarjeta destaque
-        <section id='testimonials' className="bg-gray-50 py-16 sm:py-24 overflow-hidden"> 
+        <section id='Testimonials' className="bg-gray-50 py-16 sm:py-24 overflow-hidden"> 
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 
                 {/* INICIO DE LA TARJETA PRINCIPAL CON LA IMAGEN DE FONDO */}
