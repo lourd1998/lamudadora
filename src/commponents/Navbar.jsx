@@ -88,7 +88,6 @@ export default function Navbar() {
         </Link>
         </div>
 
-        {/* Mobile button */}
         <div className="flex lg:hidden">
           <button
             onClick={() => setMobileMenuOpen(true)}
@@ -98,7 +97,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Desktop menu */}
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold text-gray-900">
@@ -158,7 +156,7 @@ export default function Navbar() {
         </PopoverGroup>
       </nav>
 
-      {/* Mobile menu */}
+
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 bg-black/30" />
         <DialogPanel className="fixed right-0 top-0 h-full w-full bg-white p-6 sm:max-w-sm">

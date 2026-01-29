@@ -1,13 +1,10 @@
 import React from 'react';
-import { Briefcase, Users, Truck, ClipboardCheck } from 'lucide-react'; // Iconos de Lucide React
-
-// Componente para la sección de Búsquedas Laborales / Postulaciones
+import { Briefcase, Users, Truck, ClipboardCheck } from 'lucide-react'; 
 export default function Postulaciones() {
     
-    // --- CONFIGURACIÓN DE RRHH ---
-    const hrEmail = "rrhh@lamudadora.com"; // Reemplaza por el mail de Recursos Humanos
+    const hrEmail = "rrhh@lamudadora.com"; 
 
-    // Definición de los puestos en búsqueda
+   
     const openPositions = [
         {
             title: "Chofer de Larga Distancia",
@@ -32,11 +29,10 @@ export default function Postulaciones() {
         }
     ];
 
-    // Componente para la Tarjeta de Puesto Individual
     const JobCard = ({ job }) => {
         const Icon = job.icon;
         
-        // Configuración del link de Mail
+     
         const emailSubject = encodeURIComponent(`Postulación para el puesto: ${job.title}`);
         const emailBody = encodeURIComponent(`Hola equipo de RRHH,\n\nMe pongo en contacto para postularme al puesto de ${job.title}. Adjunto mi CV para su revisión.\n\nSaludos.`);
         const mailtoLink = `mailto:${hrEmail}?subject=${emailSubject}&body=${emailBody}`;
@@ -44,7 +40,6 @@ export default function Postulaciones() {
         return (
             <div id='postulaciones' className="flex flex-col h-full bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-gray-100">
                 
-                {/* Cabecera del Puesto */}
                 <div className="p-6 sm:p-8 bg-orange-50 border-b border-orange-200">
                     <div className="flex items-center justify-between mb-4">
                         <div className="p-3 rounded-full bg-orange-600 shadow-md">
@@ -59,7 +54,6 @@ export default function Postulaciones() {
                     </h3>
                 </div>
 
-                {/* Contenido y Requisitos */}
                 <div className="p-6 sm:p-8 flex flex-col justify-between h-full">
                     <div>
                         <p className="text-base text-gray-600 mb-5">
@@ -79,7 +73,7 @@ export default function Postulaciones() {
                         </ul>
                     </div>
                     
-                    {/* Botón de Postulación */}
+                  
                     <div className="mt-auto">
                          <a 
                             href={mailtoLink}
@@ -96,7 +90,7 @@ export default function Postulaciones() {
     return (
         <section id="Postulaciones" className="bg-gray-50 py-24 sm:py-32 scroll-mt-20">
             <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-                {/* Encabezado de la Sección */}
+            
                 <div className="text-center mb-12">
                     <h2 className="text-base font-semibold text-orange-600">Trabajá con nosotros</h2>
                     <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
@@ -107,7 +101,7 @@ export default function Postulaciones() {
                     </p>
                 </div>
 
-                {/* Badge de Búsquedas Activas */}
+           
                 <div className="flex justify-center mb-8">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-orange-200 shadow-sm">
                         <span className="relative flex h-3 w-3">

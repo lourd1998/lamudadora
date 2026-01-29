@@ -7,7 +7,7 @@ const businessEmail = "rrhh@lamudadora.com";
     const emailSubject = encodeURIComponent("Postulacion");
     const emailBody = encodeURIComponent("Hola, me gustaría formar parte de su empresa, adjunto mi cv");
 
-// Estilo de los enlaces para el footer
+
 const FooterLink = ({ children, href = "#" }) => (
     <a 
         href={href} 
@@ -17,25 +17,19 @@ const FooterLink = ({ children, href = "#" }) => (
     </a>
 );
 
-// Componente Footer principal
+
 const Footer = () => {
-    // Definimos el ID de la aplicación para las reglas de Firebase si fuera necesario, aunque el footer no lo usa directamente.
+    
     const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
 
     return (
-        // CAMBIO CLAVE 1: Eliminamos 'fixed bottom-0 z-50' para que el footer aparezca al final de la página.
-        // CAMBIO CLAVE 2: Aseguramos que no haya margen externo con 'm-0' o 'mx-0' si fuera necesario, 
-        // aunque 'w-full' y el contenedor interno centrado es la práctica estándar.
-        // Mantengo 'w-full' para asegurar el 100% de ancho.
+       
         <footer className="w-full bg-gray-800 text-white pt-12 pb-6 shadow-2xl"> 
             
-            {/* El contenido sigue centrado y con padding lateral (px-4, etc.) para que no se pegue. */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                {/* GRID PRINCIPAL para desktop/tablet: 4 columnas */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-gray-700 pb-10">
                     
-                    {/* Columna 1: Información de la Empresa / Logo */}
                     <div>
                        <Link to="/">
                             <img
@@ -58,7 +52,6 @@ const Footer = () => {
                     </div>
                     
 
-                    {/* Columna 3: Enlaces Rápidos / Información */}
                     <div>
                         <h4 className="text-lg font-semibold mb-5 uppercase tracking-wider">
                             Información
@@ -70,7 +63,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Columna 4: Contacto */}
+                  
                     <div>
                         <h4 id='contactanos' className="text-lg font-semibold mb-5 uppercase tracking-wider">
                             Contáctanos
@@ -95,7 +88,6 @@ const Footer = () => {
 
                 </div>
 
-                {/* Sección de Copyright */}
                 <div className="mt-6 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
                     <p>
                         &copy; {new Date().getFullYear()} La Mudadora. Todos los derechos reservados.

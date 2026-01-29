@@ -19,7 +19,6 @@ function App() {
       <Navbar />
 
       <Routes>
-        {/* HOME */}
         <Route
           path="/"
           element={
@@ -36,7 +35,6 @@ function App() {
           }
         />
 
-        {/* OTRA "PÁGINA" */}
         <Route path="/postulaciones" element={<Postulaciones />} />
       </Routes>
 

@@ -4,7 +4,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-// Componente SVG local para el check
+
 function CheckSvg({ className }) {
   return (
     <svg 
@@ -22,7 +22,7 @@ function CheckSvg({ className }) {
   );
 }
 
-// Definición de los planes de servicio (3 columnas)
+
 const tiers = [
   {
     name: 'Salidas periodicas (viajes combinado)',
@@ -95,12 +95,12 @@ const tiers = [
 ]
 
 function ServiceSection() {
-  const phoneNumber = "3814161901"; // Reemplaza con el número real de la empresa
+  const phoneNumber = "3814161901"; 
 
   return (
     <div id="ServiceSection" className="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
       
-      {/* Fondo de resplandor */}
+      
       <div aria-hidden="true" className="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl">
         <div
           style={{
@@ -121,7 +121,6 @@ function ServiceSection() {
         ¿Estás planeando mudarte dentro del país? Conoce nuestras rutas frecuentes para viajes compartidos o arma tu salida exclusiva.
       </p>
       
-      {/* Contenedor de las 3 tarjetas */}
       <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-start gap-y-6 sm:mt-20 lg:max-w-none lg:grid-cols-3">
         {tiers.map((tier, tierIdx) => (
           <div
@@ -184,7 +183,6 @@ function ServiceSection() {
               ))}
             </ul>
 
-            {/* Botón CTA - WhatsApp con mensaje predeterminado */}
             <a
               href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(tier.whatsappMessage)}`}
               target="_blank"

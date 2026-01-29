@@ -1,13 +1,11 @@
 import React from 'react';
 
-// SVG de Tilde (Check Mark) en línea
 const CheckMarkSvg = (props) => (
     <svg viewBox="0 0 20 20" fill="currentColor" {...props}>
         <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.052-.143z" clipRule="evenodd" />
     </svg>
 );
 
-// Datos para la sección de Mudanzas Locales (3 servicios)
 const localServices = [
     {
         name: 'Mudanza Estándar',
@@ -55,11 +53,10 @@ const localServices = [
 ];
 
 export default function ServiceMl() {
-  const phoneNumber = "3814161901"; // Reemplaza con el número real de la empresa
-
+  const phoneNumber = "3814161901"; 
   return (
     <div id="ServiceMl" className="relative overflow-hidden bg-white py-24 sm:py-32">
-      {/* Destello naranja de fondo */}
+    
       <div 
         aria-hidden="true" 
         className="absolute inset-x-0 top-0 -z-10 transform-gpu overflow-hidden opacity-30 blur-3xl"
@@ -74,7 +71,7 @@ export default function ServiceMl() {
       </div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Encabezado Centrado */}
+     
         <div className="mx-auto max-w-2xl lg:text-center text-center"> 
           <p className="mt-2 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">
             Mudanzas Locales
@@ -85,7 +82,6 @@ export default function ServiceMl() {
           </p>
         </div>
 
-        {/* Bucle para mostrar los 3 servicios */}
         <div className="mt-16 space-y-20 lg:mt-20">
           {localServices.map((service, index) => (
             <div
@@ -93,7 +89,6 @@ export default function ServiceMl() {
               className={`mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center`}
             >
               
-              {/* Columna de Texto/Características */}
               <div 
                 className={`lg:pt-4 ${service.imageSide === 'right' ? 'lg:order-1' : 'lg:order-none'}`}
               >
@@ -106,7 +101,7 @@ export default function ServiceMl() {
                     {service.description}
                   </p>
                   
-                  {/* Lista de Características */}
+                  
                   <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
                     {service.features.map((feature) => (
                       <div key={feature.name} className="relative pl-9">
@@ -121,7 +116,7 @@ export default function ServiceMl() {
                     ))}
                   </dl>
 
-                  {/* Botón CTA - WhatsApp con mensaje predeterminado */}
+                  
                   <div className="mt-10">
                     <a
                       href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(service.whatsappMessage)}`}
@@ -135,7 +130,7 @@ export default function ServiceMl() {
                 </div>
               </div>
 
-              {/* Columna de Imagen */}
+              
               <div className={service.imageSide === 'right' ? 'lg:order-none' : 'lg:order-1'}>
                 <img
                   src={service.imageUrl}

@@ -1,13 +1,11 @@
 import React from 'react';
-import { ArrowUpFromLine, Gem, Palette } from 'lucide-react'; // Iconos de Lucide React
+import { ArrowUpFromLine, Gem, Palette } from 'lucide-react'; 
 
-// Componente para los Servicios Especiales
+
 export default function SpecialService() {
     
-    // --- CONFIGURACIÓN DE CONTACTO ---
-    const phoneNumber = "3814161901"; // Reemplaza por tu número de WhatsApp real (con código de país)
-
-    // Definición de los 3 servicios especiales con mensajes personalizados para WhatsApp
+   
+    const phoneNumber = "3814161901"; 
     const specialServices = [
         {
             title: "Piolados en Altura",
@@ -35,17 +33,16 @@ export default function SpecialService() {
         },
     ];
 
-    // Componente para la Tarjeta de Servicio Individual
+  
     const ServiceCard = ({ service }) => {
         const Icon = service.icon;
         
-        // Construcción del link de WhatsApp
         const waLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(service.whatsappMessage)}`;
 
         return (
             <div className="flex flex-col h-full bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-gray-100">
                 
-                {/* Cabecera con Icono y Título */}
+                
                 <div className="p-6 sm:p-8 bg-orange-50 border-b border-orange-200">
                     <div className={`flex items-center space-x-4`}>
                         <div className={`p-3 rounded-full bg-orange-600 shadow-md`}>
@@ -57,7 +54,7 @@ export default function SpecialService() {
                     </div>
                 </div>
 
-                {/* Contenido y Detalles */}
+                
                 <div className="p-6 sm:p-8 flex flex-col justify-between h-full">
                     <div>
                         <p className="text-base text-gray-600 mb-5">
@@ -73,7 +70,7 @@ export default function SpecialService() {
                         </ul>
                     </div>
                     
-                    {/* Botón de Llamada a la Acción vinculado a WhatsApp */}
+                    
                     <div className="mt-8">
                          <a 
                             href={waLink}
@@ -93,13 +90,12 @@ export default function SpecialService() {
     return (
         <div id="SpecialService" className="bg-gray-50 py-24 sm:py-32">
             <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-                {/* Encabezado de la Sección */}
+                
                 <h2 className="text-center text-base/7 font-semibold text-orange-600">Servicios Adicionales de Alto Valor</h2>
                 <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-gray-950 sm:text-5xl">
                     Logística Especializada para Objetos Delicados
                 </p>
 
-                {/* Contenedor principal (Grid de 3 columnas) */}
                 <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {specialServices.map((service, index) => (
                         <ServiceCard key={index} service={service} />

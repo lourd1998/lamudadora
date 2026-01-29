@@ -31,20 +31,19 @@ export default function Testimonials() {
     ];
 
     const [activeIndex, setActiveIndex] = useState(0);
-    const [isMobile, setIsMobile] = useState(false); // Empezamos en false para evitar errores de SSR
-
+    const [isMobile, setIsMobile] = useState(false);  
     const totalSlides = testimonials.length;
     const slideInterval = 6000;
 
-    // Control de redimensionamiento
+  
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 640);
-        handleResize(); // Ejecutar al montar
+        handleResize(); 
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // Auto-slide
+    
     useEffect(() => {
         const timer = setInterval(() => {
             setActiveIndex((current) => (current + 1) % totalSlides);
@@ -59,7 +58,7 @@ export default function Testimonials() {
     const desktopBackgroundImageUrl = "https://raw.githubusercontent.com/lourd1998/lamudadora/main/public/bannerhorizontal.png";
     const currentBackgroundImageUrl = isMobile ? mobileBackgroundImageUrl : desktopBackgroundImageUrl;
 
-    // Verificación de seguridad
+    
     if (testimonials.length === 0) return null;
 
     return (
@@ -73,7 +72,7 @@ export default function Testimonials() {
                         backgroundPosition: 'center',
                     }}
                 >
-                    {/* Overlay más fuerte para asegurar que el texto se lea */}
+                    
                     <div className="absolute inset-0 bg-black/60" aria-hidden="true"></div>
 
                     <div className="relative z-10 w-full max-w-4xl px-6 py-12 text-center text-white">
@@ -81,7 +80,7 @@ export default function Testimonials() {
                         <h3 className="mt-2 text-3xl sm:text-5xl font-bold">Confianza Comprobada</h3>
 
                         <div className="mt-10 min-h-[200px] flex flex-col items-center justify-center">
-                            {/* Animación simple de opacidad */}
+                            
                             <p key={activeIndex} className="text-lg sm:text-2xl italic font-light animate-fadeIn">
                                 "{testimonials[activeIndex].quote}"
                             </p>
@@ -99,7 +98,7 @@ export default function Testimonials() {
                             </div>
                         </div>
 
-                        {/* Flechas */}
+                        
                         <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none">
                             <button onClick={goToPrev} className="pointer-events-auto p-2 bg-white/10 hover:bg-white/20 rounded-full transition">
                                 <ChevronLeft size={32} />
